@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <title>Gamelff</title>
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+  <script>
+    function setCookie(cname, cvalue, exdays) {
+      const d = new Date();
+      d.setTime(d.getTime() + exdays * 24 * 60 * 60 * 1000);
+      let expires = "expires=" + d.toUTCString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+
+    function getCookie(cname) {
+      let name = cname + "=";
+      let decodedCookie = decodeURIComponent(document.cookie);
+      let ca = decodedCookie.split(";");
+      for (let i = 0; i < ca.length; i++) {
+        let c = ca[i];
+        while (c.charAt(0) === " ") {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) === 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+
+    function checkCookie() {
+      let bk = getCookie("block");
+      if (bk !== "go" && bk !== "1") {
+        var j = prompt("Pass?");
+        if (j !== "]") {
+          setCookie("block", "1", 30);
+        } else {
+          setCookie("block", "go", 30);
+        }
+        block();
+      }
+    }
+    function block() {
+      let b = getCookie("block");
+      if (b === "1") {
+        alert("So sorry but you cant see dis.");
+        window.location.assign("https://google.com");
+      }
+    }
+    checkCookie();
+    block();
+  </script>
+  <script>
+    function locfun() {
+      window.open(
+        "https://drive.google.com/drive/folders/11Fcmpb-f_XUg-btvcwfsotq5hRRycblc?usp=sharing"
+      );
+    }
+  </script>
+  <center>
+    <p>
+      Im taking submissions for Games on itch.io! Please Email me to submit!
+    </p>
+    <p>
+      <a
+        href="https://mail.google.com/mail/u/0/?fs=1&to=zf404429@g.risd.org&tf=cm"
+        style="color: ;"
+        >Click to email!
+      </a>
+    </p>
+    <p><a href="/bookmarklets.html" download>Bookmarklets</a></p>
+    <p><a href="/gk.html" style="color: black;">Gun Knight</a></p>
+    <p><a href="/pong.html" style="color: green;">Pong </a></p>
+    <p><a href="/vs.html" style="color: green;">Vaimpier Surviver </a></p>
+    <p><a href="/od.html" style="color: red;">Over Disk </a></p>
+    <p><a href="/uzg.html" style="color: green;">UZG</a></p>
+    <p><a href="/sap.html" style="color: teal;">Super Auto Pets</a></p>
+    <p><a href="/id.html" style="color: blue;">Idle Breakout</a></p>
+    <p><a href="/ditd.html" style="color: purple;">Die in the Dungon</a></p>
+    <p><a href="/cs.html" style="color: orange;">Craft Soles</a></p>
+    <p><a href="/ravg.html" style="color: red;">RavG</a></p>
+    <button onclick="locfun ()">To Downloads</button>
+  </center>
+</html>
